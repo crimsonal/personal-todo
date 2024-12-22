@@ -13,3 +13,8 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+h1{
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
