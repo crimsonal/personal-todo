@@ -1,14 +1,14 @@
 import {useState} from 'react'
 
 function TodoEdit(props) {
-    const [todo, updateTodo] = useState('')
+    const [todo, updateTodo] = useState(props.todo)
 
     function todoChanged(event) {
         updateTodo(event.target.value)
     }
 
     function buttonClicked() {
-        props.editTodo(todo)
+        props.editTodo(props.id, todo)
 
         
     }
@@ -16,7 +16,8 @@ function TodoEdit(props) {
         <div className="update-form">
             <input 
             type="text" 
-            placeholder="update todo"
+            placeholder="Update todo"
+            value={todo}
             onChange={todoChanged}></input>
             <button onClick={buttonClicked}>Update</button>
         </div>
