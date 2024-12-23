@@ -4,13 +4,16 @@ import TodoAdd from './TodoAdd'
 import Todo from './Todo.jsx'
 
 function TodoWrapper () {
-    const [todos, addTodo] = useState([{todo:"Shopping", key:uuidv4()}])
+    const [todos, setTodos] = useState([{todo:"Shopping", key:uuidv4()}])
     
     function appendTodo(t) {
+        console.log("todo appended!")
         let newTodo = {
-            todo: t
+            todo: t,
+            key: uuidv4()
         }
-        addTodo(...todos, newTodo)
+        setTodos([...todos, newTodo])
+        
     }
 
     return (

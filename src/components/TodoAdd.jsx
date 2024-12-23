@@ -5,15 +5,20 @@ function TodoAdd(props) {
 
     function todoChanged(event) {
         updateTodo(event.target.value)
-        console.log('a')
+    }
+
+    function buttonClicked() {
+        props.appendTodo(todo)
+
+        
     }
     return (
         <div className="add-form">
             <input 
             type="text" 
             placeholder="Enter todo"
-            onchange={todoChanged}></input>
-            <button>Add</button>
+            onChange={todoChanged}></input>
+            <button onClick={buttonClicked}>Add</button>
         </div>
         
     )
