@@ -18,3 +18,8 @@ h1{
   font-family: 'Roboto', sans-serif;
   text-align: center;
 }
+
+.todo-p {
+  display: inline;
+  margin-right: 10px;
+}

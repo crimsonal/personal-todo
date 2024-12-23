@@ -3,8 +3,10 @@
 function Todo(props) 
 {
     return (
-        <div>
-            {props.todo}
+        <div className="todo-obj">
+            <p className="todo-p"> {props.todo}</p>
+            <button>Edit</button>
+            <button>Delete</button>
         </div>
     )
 }
