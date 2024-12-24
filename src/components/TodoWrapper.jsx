@@ -11,7 +11,14 @@ function TodoWrapper () {
 
     function editTodo(id, t) {
         // editTodo function where k is key and t is the new updated todo
-        console.log(todos.find((td) => td.key==id))
+        const nextTodos = todos.map((todo) => {
+            if (todo.id === id) {
+                todo.editing = true
+            } else {
+                return todo
+            }
+        })
+        setTodos(nextTodos)
     }
 
     function appendTodo(t) {
