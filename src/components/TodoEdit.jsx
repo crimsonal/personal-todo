@@ -8,7 +8,7 @@ function TodoEdit(props) {
     }
 
     function buttonClicked() {
-        props.editTodo(props.id, todo)
+        props.updateTodo(props.id, todo)
 
         
     }

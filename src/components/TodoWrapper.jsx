@@ -9,16 +9,27 @@ function TodoWrapper () {
 
 
 
-    function editTodo(id, t) {
+    function editTodo(id) {
         // editTodo function where k is key and t is the new updated todo
         const nextTodos = todos.map((todo) => {
-            if (todo.id === id) {
-                todo.editing = true
+            if (todo.key === id) {
+                return {...todo, edit: true} 
             } else {
-                return todo
+                return {...todo} // ... is spread operator which copies child elements, use commas to replace!
             }
         })
         setTodos(nextTodos)
+    }
+
+    function updateTodo(id, t) {
+        const newTodos = todos.map((todo_map) => {
+            if (todo_map.key === id) {
+                return {...todo_map, edit: false, todo: t}
+            } else {
+                return {...todo_map}
+            }
+        })
+        setTodos(newTodos)
     }
 
     function appendTodo(t) {
@@ -34,21 +45,18 @@ function TodoWrapper () {
     return (
         <div class="todo-frame">
             <h1>Todos</h1>
-            <TodoAdd appendTodo={appendTodo}/>
+            <TodoAdd key="appendTodo" appendTodo={appendTodo}/>
             <div className="todos">
-                {todos.map((todo) => (
-                    !todo.edit ? 
-                    <Todo 
-                    todo={todo.todo}
-                    key={todo.key}
-                    id={todo.key}
-                    editTodo={editTodo}
-                    /> : <TodoEdit todo={todo.edit} id={todo.key} key={todo.key} />
-                ))}
+                {todos.map((todo) => {
+                    if (todo.edit) {
+                        
+                        return <TodoEdit todo={todo.todo} id={todo.key} key={todo.key} updateTodo={updateTodo} />
+                    } else {
+                        return <Todo todo={todo.todo} key={todo.key} id={todo.key} editTodo={editTodo} />
+                    }
+                })}
             </div>
-
         </div>
-
     )
 }
 
