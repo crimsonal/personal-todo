@@ -15,10 +15,17 @@ function TodoWrapper () {
             if (todo.key === id) {
                 return {...todo, edit: true} 
             } else {
-                return {...todo} // ... is spread operator which copies child elements, use commas to replace!
+                return {...todo} // ... is spread operator which copies elements, use existing names to overwrite!
             }
         })
         setTodos(nextTodos)
+    }
+
+    function deleteTodo(id) {
+        const newTodos = todos.filter((todo) => {
+            return todo.key !== id
+        })
+        setTodos(newTodos)
     }
 
     function updateTodo(id, t) {
@@ -52,7 +59,7 @@ function TodoWrapper () {
                         
                         return <TodoEdit todo={todo.todo} id={todo.key} key={todo.key} updateTodo={updateTodo} />
                     } else {
-                        return <Todo todo={todo.todo} key={todo.key} id={todo.key} editTodo={editTodo} />
+                        return <Todo todo={todo.todo} key={todo.key} id={todo.key} editTodo={editTodo} deleteTodo={deleteTodo}/>
                     }
                 })}
             </div>
