@@ -51,7 +51,7 @@ function TodoWrapper () {
 
     return (
         <div class="todo-frame">
-            <h1>Todos</h1>
+            <h1>TODO LIST</h1>
             <TodoAdd key="appendTodo" appendTodo={appendTodo}/>
             <div className="todos">
                 {todos.map((todo) => {

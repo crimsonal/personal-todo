@@ -15,8 +15,9 @@ function TodoAdd(props) {
     return (
         <div className="add-form">
             <input 
+            className="add-form-input"
             type="text" 
-            placeholder="Enter a todo"
+            placeholder="Add your task"
             value={todo}
             onChange={todoChanged}></input>
             <button onClick={buttonClicked}>Add</button>
