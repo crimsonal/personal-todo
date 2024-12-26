@@ -5,7 +5,7 @@ import Todo from './Todo.jsx'
 import TodoEdit from "./TodoEdit.jsx"
 
 function TodoWrapper () {
-    const [todos, setTodos] = useState([{todo:"Shopping", key:uuidv4(), edit:false}])
+    const [todos, setTodos] = useState([])
 
 
 

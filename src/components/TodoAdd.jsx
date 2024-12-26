@@ -8,8 +8,10 @@ function TodoAdd(props) {
     }
 
     function buttonClicked() {
-        props.appendTodo(todo)
-
+        if (todo.trim() !== "") {
+            props.appendTodo(todo)
+            
+        }
         updateTodo("")
     }
     return (

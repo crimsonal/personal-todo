@@ -22,16 +22,47 @@ h1{
   text-align: center;
 }
 
+h1::before {
+  left: 0;
+  width: 145px;
+  height: 10px;
+  content: "sas";
+  bottom: -10px;
+  background: #000000;
+  position: absolute;
+}
 .todo-p {
   display: inline;
   margin-right: 10px;
 }
 
+.add-form {
+  margin-bottom: 20px;
+  align-items: center;
+}
 .add-form-input {
   border-radius: 10px;
   height: 30px;
+  width: 300px;
   font-size: large;
-  border: 1px solid red;
+  border: 2px solid black;
   background-color: aliceblue;
+  padding: 5px;
   outline: none;
+}
+
+button { 
+  /* TODO: Align buttons to the right! */
+  background-color: rgb(44, 113, 244);
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  width: 70px;
+  font-size: large;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.todo-p {
+  font-size: large;
 }
