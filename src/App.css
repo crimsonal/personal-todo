@@ -61,8 +61,21 @@ button {
   font-size: large;
   cursor: pointer;
   margin-left: 5px;
+  float: right;
 }
 
 .todo-p {
-  font-size: large;
+  font-size: x-large;
+}
+
+.todo-obj {
+  height: 50px;
+}
+
+.todos {
+  overflow-y: auto;
+  height: 550px;
+  scrollbar-gutter: stable;
+  scrollbar-color: rgb(44, 113, 244) white;
+
 }

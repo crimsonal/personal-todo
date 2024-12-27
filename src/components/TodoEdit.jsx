@@ -8,15 +8,20 @@ function TodoEdit(props) {
     }
 
     function buttonClicked() {
-        props.updateTodo(props.id, todo)
+        if (todo.trim() === "") {
+            // empty string, delete the Todo
+            props.deleteTodo(props.id)
+        } else {
+            props.updateTodo(props.id, todo)
+        }
 
-        
     }
     return (
-        <div className="update-form">
+        <div className="update-form todo-obj">
             <input 
             type="text" 
-            placeholder="Update todo"
+            className="add-form-input"
+            placeholder="Edit your task"
             value={todo}
             onChange={todoChanged}></input>
             <button onClick={buttonClicked}>Update</button>

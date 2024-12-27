@@ -56,7 +56,7 @@ function TodoWrapper () {
             <div className="todos">
                 {todos.map((todo) => {
                     if (todo.edit) {
-                        return <TodoEdit todo={todo.todo} id={todo.key} key={todo.key} updateTodo={updateTodo} />
+                        return <TodoEdit todo={todo.todo} id={todo.key} key={todo.key} updateTodo={updateTodo} deleteTodo={deleteTodo} />
                     } else {
                         return <Todo todo={todo.todo} key={todo.key} id={todo.key} editTodo={editTodo} deleteTodo={deleteTodo}/>
                     }
